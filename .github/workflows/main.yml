@@ -10,8 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: jsmrcaga/action-netlify-deploy@master
-        with:
+
+       - name: Checkout under $GITHUB_WORKSPACE
+         uses: actions/checkout@main
+
+       - name: Set up NodeJS
+         uses: actions/setup-node@v1
+         with:
+          node-version: 16
+
+       - name: Install all dependencies
+         run: npm install
+
+       - name: Deploy to Netlify
+         uses: jsmrcaga/action-netlify-deploy@master
+         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
