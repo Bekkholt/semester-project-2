@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>Auctionhouse - Add new</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="container d-flex justify-content-between">
+          <div>
+            <a
+              class="d-flex justify-content-start"
+              href="/src/all_listings.html"
+              >See all listings</a
+            >
+          </div>
+          <div class="d-flex justify-content-end">
+            <a class="m-2" href="/src/register.html">Logout</a>
+            <a class="m-2" href="/src/profile.html">My profile</a>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <body>
+      <main>
+        <h1 class="d-flex justify-content-center p-5 m-5">Add new listing</h1>
+        <form class="container d-flex justify-content-center" action="/">
+          <div>
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" />
+            <label class="form-label">Upload image (optional)</label>
+            <input
+              class="form-control rounded-pill"
+              type="file"
+              id="formFile"
+            />
+            <label class="form-label">Upload image (optional)</label>
+            <input
+              class="form-control rounded-pill"
+              type="file"
+              id="formFile"
+            />
+            <label class="form-label">Upload image (optional)</label>
+            <input
+              class="form-control rounded-pill"
+              type="file"
+              id="formFile"
+            />
+            <label class="form-label">Product description</label>
+            <input type="text" class="form-control" />
+            <label class="form-label">Deadline</label>
+            <input type="date" class="form-control" />
+            <div class="row mt-4">
+              <a href="/src/profile.html" type="submit" class="btn">Upload</a>
+            </div>
+          </div>
+        </form>
+      </main>
+    </body>
+    <footer class="container d-flex justify-content-between">
+      <div>
+        <address class="d-flex justify-content-start">Auctionhouse</address>
+        <address class="d-flex justify-content-start">Auctionstreet 31</address>
+        <address class="d-flex justify-content-start">5555 Auctioncity</address>
+      </div>
+      <div>
+        <p class="d-flex justify-content-end">Auctionhouse</p>
+        <p class="d-flex justify-content-end">made by</p>
+        <p class="d-flex justify-content-end">Tina Bekkholt</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -5,34 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <title>Auctionhouse</title>
+    <title>Auctionhouse - Register</title>
   </head>
   <body>
     <header>
       <nav>
         <ul class="container d-flex justify-content-between">
-          <div class="d-flex justify-content-start">
-            <a class="m-2" href="/src/all_listings.html">See all listings</a>
+          <div>
+            <a
+              class="d-flex justify-content-start"
+              href="/src/all_listings.html"
+              >See all listings</a
+            >
           </div>
           <div class="d-flex justify-content-end">
-            <a class="m-2" href="/src/register.html">Register</a>
-            <a class="m-2">Login</a>
+            <a class="m-2">Register</a>
+            <a class="m-2" href="/">Login</a>
           </div>
         </ul>
       </nav>
     </header>
     <body>
       <main>
-        <h1 class="d-flex justify-content-center p-5 m-5">Auctionhouse</h1>
-        <form
-          class="container d-flex justify-content-center col-10 p-5"
-          action="/src/profile.html"
-        >
+        <h1 class="d-flex justify-content-center p-5 m-5">Register</h1>
+        <form class="container d-flex justify-content-center" action="/">
           <div>
             <label class="form-label">Username</label>
             <input type="text" class="form-control" />
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" />
             <label for="inputPassword" class="form-label">Password</label>
             <input
               type="password"
@@ -42,10 +45,7 @@
               required
             />
             <div class="row mt-4">
-              <button type="submit" class="btn">Log in</button>
-              <a href="src/register.html" type="button" class="btn">
-                Register
-              </a>
+              <a href="/" type="submit" class="btn"> Register </a>
             </div>
           </div>
         </form>
