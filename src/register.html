@@ -15,7 +15,8 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <title>Auctionhouse</title>
+    <script type="module" src="/src/js/register.js"></script>
+    <title>Auctionhouse - Register</title>
   </head>
   <body class="bg-light">
     <header>
@@ -55,17 +56,21 @@
       >
         Register
       </h1>
-      <form class="d-flex justify-content-center mb-5" action="/">
+      <form class="d-flex justify-content-center mb-5" id="form">
         <div class="bg-primary p-4">
           <input
             type="text"
             class="form-control bg-light mt-3 small-font"
             placeholder="Username"
+            id="username"
+            required
           />
           <input
             type="email"
             class="form-control bg-light mt-3 small-font"
             placeholder="Email"
+            id="email"
+            required
           />
           <input
             type="password"
@@ -76,16 +81,30 @@
             required
           />
           <div class="row mt-5 d-flex justify-content-center">
-            <a
+            <button
               href="/"
               type="submit"
               class="btn bg-secondary medium-font fw-semibold"
             >
               Register
-            </a>
+            </button>
           </div>
         </div>
       </form>
+      <div
+        class="alert alert-success small-font m-4 invisible"
+        role="alert"
+        id="showSuccess"
+      >
+        Your profile is registered!
+      </div>
+      <div
+        class="alert alert-danger small-font m-4 invisible"
+        role="alert"
+        id="showError"
+      >
+        <p id="errorMessage"></p>
+      </div>
     </main>
   </body>
   <footer class="d-flex justify-content-between bg-primary p-3 mt-4 w-100">
