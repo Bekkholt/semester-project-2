@@ -1,2 +1,25 @@
 @import "./_variables.scss";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "nav";
+
+.background-img {
+  background-image: url("/images/edgar-5lgPqfdLbMo-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  background-color: #fbcecaa1;
+  height: 100%;
+}
+
+.big-font {
+  font-family: "Cinzel", serif;
+}
+
+.medium-font {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.small-font {
+  font-family: "Andada Pro", serif;
+}
