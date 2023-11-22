@@ -17,7 +17,7 @@
     ></script>
     <title>Auctionhouse</title>
   </head>
-  <body>
+  <body class="bg-light">
     <header>
       <nav class="bg-primary w-100">
         <ul class="container d-flex justify-content-between">
@@ -44,103 +44,101 @@
         </ul>
       </nav>
     </header>
-    <body>
-      <main>
+    <main>
+      <div class="d-flex justify-content-center">
+        <a href="/src/all_listings.html">
+          <img src="/images/Arrow backarrow_back.png" class="m-3" />
+        </a>
+      </div>
+      <h1 class="d-flex justify-content-center p-5 m-5 big-font display-3">
+        Product title
+      </h1>
+      <div class="p-4 mt-4 col-8 container bg-primary">
+        <p
+          class="d-flex justify-content-center text-light medium-font fw-semibold fst-italic"
+        >
+          Listed by username
+        </p>
         <div class="d-flex justify-content-center">
-          <a href="/src/all_listings.html">
-            <img src="/images/Arrow backarrow_back.png" class="m-3" />
-          </a>
+          <img
+            src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
+            class="w-50 mb-2"
+          />
         </div>
-        <h1 class="d-flex justify-content-center p-5 m-5 big-font display-3">
-          Product title
-        </h1>
-        <div class="p-4 mt-4 col-8 container bg-primary">
-          <p
-            class="d-flex justify-content-center text-light medium-font fw-semibold fst-italic"
-          >
-            Listed by username
-          </p>
-          <div class="d-flex justify-content-center">
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
+        <div class="d-flex">
+          <img
+            src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
+            class="w-50 p-3"
+          />
+          <img
+            src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
+            class="w-50 p-3"
+          />
+        </div>
+        <p class="text-light small-font">Longer description of product.</p>
+        <div class="d-flex justify-content-between pt-4">
+          <div class="d-flex justify-content-start row">
+            <p class="text-light small-font">Deadline:</p>
+            <p class="text-light small-font">**/**/**</p>
+            <p class="text-light small-font">Current bid:</p>
+            <p class="text-light small-font">$****</p>
+            <p class="text-light small-font">Started on:</p>
+            <p class="text-light small-font">$****</p>
           </div>
-          <div class="d-flex">
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 p-3"
+        </div>
+        <form class="d-flex justify-content-end" action="/src/profile.html">
+          <div class="col-4">
+            <label
+              class="d-flex form-label justify-content-end text-light small-font"
+              >Insert bid here:</label
+            >
+            <input
+              type="text"
+              class="form-control bg-light small-font"
+              placeholder="$"
             />
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 p-3"
-            />
-          </div>
-          <p class="text-light small-font">Longer description of product.</p>
-          <div class="d-flex justify-content-between pt-4">
-            <div class="d-flex justify-content-start row">
-              <p class="text-light small-font">Deadline:</p>
-              <p class="text-light small-font">**/**/**</p>
-              <p class="text-light small-font">Current bid:</p>
-              <p class="text-light small-font">$****</p>
-              <p class="text-light small-font">Started on:</p>
-              <p class="text-light small-font">$****</p>
-            </div>
-          </div>
-          <form class="d-flex justify-content-end" action="/src/profile.html">
-            <div class="col-4">
-              <label
-                class="d-flex form-label justify-content-end text-light small-font"
-                >Insert bid here:</label
+            <div class="d-flex justify-content-end">
+              <button
+                type="submit"
+                class="btn bg-secondary medium-font fw-semibold mt-2"
               >
-              <input
-                type="text"
-                class="form-control bg-light small-font"
-                placeholder="$"
-              />
-              <div class="d-flex justify-content-end">
-                <button
-                  type="submit"
-                  class="btn bg-secondary medium-font fw-semibold mt-2"
-                >
-                  Place bid
-                </button>
-              </div>
+                Place bid
+              </button>
             </div>
-          </form>
-        </div>
-      </main>
-    </body>
-    <footer class="d-flex justify-content-between bg-primary p-3 mt-4 w-100">
-      <div>
-        <address
-          class="d-flex justify-content-start text-secondary m-1 small-font"
-        >
-          Auctionhouse
-        </address>
-        <address
-          class="d-flex justify-content-start text-secondary m-1 small-font"
-        >
-          Auctionstreet 31
-        </address>
-        <address
-          class="d-flex justify-content-start text-secondary m-1 small-font"
-        >
-          5555 Auctioncity
-        </address>
+          </div>
+        </form>
       </div>
-      <img src="/images/Logoauctionhouse_logo.png" class="h-50 m-2" />
-      <div>
-        <p class="d-flex justify-content-end text-secondary m-1 small-font">
-          Auctionhouse
-        </p>
-        <p class="d-flex justify-content-end text-secondary m-1 small-font">
-          made by
-        </p>
-        <p class="d-flex justify-content-end text-secondary m-1 small-font">
-          Tina Bekkholt
-        </p>
-      </div>
-    </footer>
+    </main>
   </body>
+  <footer class="d-flex justify-content-between bg-primary p-3 mt-4 w-100">
+    <div>
+      <address
+        class="d-flex justify-content-start text-secondary m-1 small-font"
+      >
+        Auctionhouse
+      </address>
+      <address
+        class="d-flex justify-content-start text-secondary m-1 small-font"
+      >
+        Auctionstreet 31
+      </address>
+      <address
+        class="d-flex justify-content-start text-secondary m-1 small-font"
+      >
+        5555 Auctioncity
+      </address>
+    </div>
+    <img src="/images/Logoauctionhouse_logo.png" class="h-50 m-2" />
+    <div>
+      <p class="d-flex justify-content-end text-secondary m-1 small-font">
+        Auctionhouse
+      </p>
+      <p class="d-flex justify-content-end text-secondary m-1 small-font">
+        made by
+      </p>
+      <p class="d-flex justify-content-end text-secondary m-1 small-font">
+        Tina Bekkholt
+      </p>
+    </div>
+  </footer>
 </html>
