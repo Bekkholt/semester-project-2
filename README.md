@@ -19,4 +19,5 @@ To use both SASS watch and live-server simultaniously:
 - SASS/SCSS
 - Netlify
 - Figma
-- Trello
+- GitHub Projects (Gantt board)
+- Trello (Kanban board)
