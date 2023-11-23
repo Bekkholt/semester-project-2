@@ -15,6 +15,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/src/js/login.js"></script>
     <title>Auctionhouse - Home</title>
   </head>
   <body class="background-img">
@@ -53,12 +54,15 @@
       <form
         class="d-flex justify-content-center mb-5"
         action="/src/profile.html"
+        id="form"
       >
         <div class="bg-primary p-4">
           <input
             type="email"
             class="form-control bg-light mt-3 small-font"
             placeholder="Email"
+            id="email"
+            required
           />
           <input
             type="password"
@@ -85,6 +89,13 @@
           </div>
         </div>
       </form>
+      <div
+        class="alert alert-danger small-font m-4 invisible"
+        role="alert"
+        id="showError"
+      >
+        <p id="errorMessage"></p>
+      </div>
       <div class="d-flex justify-content-center">
         <a href="src/all_listings.html">
           <img src="/images/Arrow downarrow_down.png" />
