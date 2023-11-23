@@ -56,7 +56,7 @@
       >
         Register
       </h1>
-      <form class="d-flex justify-content-center mb-5" id="form">
+      <form class="d-flex justify-content-center" id="form">
         <div class="bg-primary p-4">
           <input
             type="text"
@@ -91,19 +91,21 @@
           </div>
         </div>
       </form>
-      <div
-        class="alert alert-success small-font m-4 invisible"
-        role="alert"
-        id="showSuccess"
-      >
-        Your profile is registered!
-      </div>
-      <div
-        class="alert alert-danger small-font m-4 invisible"
-        role="alert"
-        id="showError"
-      >
-        <p id="errorMessage"></p>
+      <div class="d-flex row">
+        <div
+          class="alert alert-success small-font invisible col-4 mt-2 d-flex justify-content-center"
+          role="alert"
+          id="showSuccess"
+        >
+          Your profile is registered!
+        </div>
+        <div
+          class="alert alert-danger small-font invisible col-4 mt-2 d-flex justify-content-center"
+          role="alert"
+          id="showError"
+        >
+          <p id="errorMessage"></p>
+        </div>
       </div>
     </main>
   </body>
