@@ -15,6 +15,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/src/js/profile.js"></script>
     <script type="module" src="/src/js/logout.js"></script>
     <title>Auctionhouse - My profile</title>
   </head>
@@ -54,10 +55,7 @@
       <div>
         <div>
           <div class="d-flex justify-content-center">
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
+            <img src="" class="w-50 mb-2" id="avatar" />
           </div>
           <a
             class="d-flex justify-content-center mb-4 nav-link small-font fst-italic"
@@ -66,11 +64,12 @@
           >
           <h2
             class="d-flex justify-content-center medium-font fw-semibold display-4"
+            id="username"
           >
             Username
           </h2>
-          <p class="d-flex justify-content-center small-font">
-            My credit: $****
+          <p class="d-flex justify-content-center small-font" id="credits">
+            My credits: $****
           </p>
         </div>
         <div class="d-flex justify-content-center">

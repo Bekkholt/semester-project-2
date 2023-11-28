@@ -27,6 +27,7 @@ async function loginUser(url, login) {
     localStorage.setItem("accessToken", accessToken);
     localStorage.setItem("name", json.name);
     localStorage.setItem("avatar", json.avatar);
+    localStorage.setItem("credits", json.credits);
     return json;
   } catch (error) {
     return error;
