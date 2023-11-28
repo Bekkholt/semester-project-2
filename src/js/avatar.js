@@ -18,6 +18,7 @@ const inputImage = document.querySelector("#input");
  * updated on the profile
  * @param {string} currentDetails The profile details
  */
+
 function profileDetails() {
   avatarContainer.src = currentDetails.avatar;
 }
