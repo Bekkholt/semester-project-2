@@ -1,7 +1,5 @@
-import { fetchListings } from "../js/modules.mjs";
-import { displayListings } from "../js/modules.mjs";
-import { allListingsUrl } from "../js/modules.mjs";
+import { fetchAndDisplay } from "../js/modules.mjs";
+import { onClick } from "../js/modules.mjs";
 
-const listings = await fetchListings(allListingsUrl);
-
-displayListings(listings);
+fetchAndDisplay();
+onClick();
