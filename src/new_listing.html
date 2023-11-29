@@ -15,6 +15,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/src/js/new_listing.js"></script>
     <script type="module" src="/src/js/logout.js"></script>
     <title>Auctionhouse - Add new listing</title>
   </head>
@@ -66,28 +67,47 @@
         <div>
           <label class="form-label text-light mt-2">Product title:</label>
 
-          <input type="text" class="form-control" placeholder="Title" />
-          <label class="form-label text-light mt-5"
-            >Upload images (optional):</label
-          >
-          <input class="form-control mt-2" type="file" id="formFile" />
-          <input class="form-control mt-2" type="file" id="formFile" />
-          <input class="form-control mt-2" type="file" id="formFile" />
+          <input
+            type="text"
+            class="form-control title"
+            placeholder="Title"
+            required
+          />
+          <label class="form-label text-light mt-3">Upload image:</label>
+          <input
+            class="form-control image"
+            type="text"
+            placeholder="Image link"
+            id="input"
+          />
           <label class="form-label text-light mt-5">Product description:</label>
           <input
             type="text"
-            class="form-control"
+            class="form-control description"
             placeholder="Product description"
           />
           <label class="form-label text-light mt-3">Deadline:</label>
-          <input type="date" class="form-control" />
+          <input
+            type="datetime-local"
+            class="form-control deadline"
+            min="2023-06-07T00:00"
+            max="2050-06-14T00:00"
+            required
+          />
           <div class="row mt-4 d-flex justify-content-center">
             <a
               href="/src/profile.html"
-              type="submit"
-              class="btn bg-secondary col-6"
+              type="button"
+              class="btn bg-secondary col-6 upload"
               >Upload</a
             >
+            <div
+              class="alert alert-danger m-2 invisible"
+              role="alert"
+              id="showError"
+            >
+              <p id="errorMessage">Error! Listing not created.</p>
+            </div>
           </div>
         </div>
       </form>
