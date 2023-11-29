@@ -174,9 +174,8 @@ async function fetchAndDisplay() {
  * @param {event} event The event that happens on click
  */
 function onClick(event) {
-  event.preventDefault();
   offset += numListings;
-  fetchAndDisplay();
+  fetchAndDisplay(event);
 }
 
 /**
