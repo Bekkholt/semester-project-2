@@ -92,6 +92,9 @@ function createProductHTML(specificProduct) {
 
   if (profileName === `${specificProduct.seller.name}`) {
     editBtn.classList.remove("invisible");
+    formLabel.classList.add("invisible");
+    formInput.classList.add("invisible");
+    bidBtn.classList.add("invisible");
   }
 
   productText.textContent = specificProduct.description;
