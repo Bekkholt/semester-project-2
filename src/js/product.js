@@ -94,6 +94,7 @@ function createProductHTML(specificProduct) {
     formLabel.classList.add("invisible");
     formInput.classList.add("invisible");
     bidBtn.classList.add("invisible");
+    productText.classList.add("mt-4");
   }
 
   productText.textContent = specificProduct.description;
