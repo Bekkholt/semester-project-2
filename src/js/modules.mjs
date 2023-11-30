@@ -69,7 +69,10 @@ async function fetchSpecificListing(id) {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await fetch(allListingsUrl + `${id}`, getData);
+    const response = await fetch(
+      allListingsUrl + `${id}` + `?_seller=true`,
+      getData
+    );
     const result = await response.json();
 
     return result;

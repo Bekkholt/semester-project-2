@@ -6,7 +6,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const token = localStorage.getItem("accessToken");
 
-// const profileName = localStorage.getItem("name");
+const profileName = localStorage.getItem("name");
 
 /**
  * Creates the HTML with the details
@@ -89,9 +89,11 @@ function createProductHTML(specificProduct) {
   if (specificProduct.media) {
     image.src = specificProduct.media;
   }
-  //   if (profileName === specificProduct.seller.name) {
-  //     editBtn.classList.remove("invisible");
-  //   }
+
+  if (profileName === `${specificProduct.seller.name}`) {
+    editBtn.classList.remove("invisible");
+  }
+
   productText.textContent = specificProduct.description;
   deadline.textContent = "Deadline:";
   deadlineDetails.textContent = specificProduct.endsAt;
@@ -107,6 +109,8 @@ function createProductHTML(specificProduct) {
   startedDetails.textContent = specificProduct.created;
   formLabel.textContent = "Insert bid here:";
   formInput.placeholder = "Credits";
+  editBtn.type = "button";
+  editBtn.href = "../new_listing.html";
   bidBtn.type = "submit";
 
   if (localStorage.accessToken === token) {
