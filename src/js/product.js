@@ -77,12 +77,10 @@ function createProductHTML(specificProduct) {
   );
   editBtn.classList.add(
     "btn",
-    "d-flex",
-    "justify-content-center",
     "bg-secondary",
     "medium-font",
     "fw-semibold",
-    "mb-4",
+    "m-4",
     "invisible"
   );
 
@@ -92,6 +90,7 @@ function createProductHTML(specificProduct) {
 
   if (profileName === `${specificProduct.seller.name}`) {
     editBtn.classList.remove("invisible");
+    btnDiv.append(editBtn);
     formLabel.classList.add("invisible");
     formInput.classList.add("invisible");
     bidBtn.classList.add("invisible");
@@ -130,7 +129,6 @@ function createProductHTML(specificProduct) {
 
   card.append(cardContent);
   cardContent.appendChild(imageContainer);
-  cardContent.append(editBtn);
   cardContent.append(productText);
   cardContent.appendChild(lowerCard);
   lowerCard.appendChild(bidInfo);
