@@ -15,6 +15,8 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="/src/js/product.js"></script>
+    <script type="module" src="/src/js/logout.js"></script>
     <title>Auctionhouse - Product</title>
   </head>
   <body class="bg-light">
@@ -34,12 +36,12 @@
           <div class="d-flex justify-content-end">
             <a
               class="text-secondary nav-link btn mt-4 m-4 small-font"
-              href="/src/register.html"
-              >Register</a
+              href="/src/profile.html"
+              >My profile</a
             >
-            <a class="text-secondary nav-link btn mt-4 small-font" href="/"
-              >Login</a
-            >
+            <a class="text-secondary nav-link btn mt-4 small-font" id="logout">
+              Logout
+            </a>
           </div>
         </ul>
       </nav>
@@ -51,65 +53,11 @@
         </a>
       </div>
       <h1
-        class="d-flex justify-content-center p-5 m-5 big-font display-3 text-center"
+        class="d-flex justify-content-center p-5 m-5 big-font display-3 text-center title"
       >
         Product title
       </h1>
-      <div class="p-4 mt-4 col-8 container bg-primary">
-        <p
-          class="d-flex justify-content-center text-light medium-font fw-semibold fst-italic"
-        >
-          Listed by username
-        </p>
-        <div class="d-flex justify-content-center">
-          <img
-            src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-            class="w-50 mb-2"
-          />
-        </div>
-        <div class="d-flex">
-          <img
-            src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-            class="w-50 p-3"
-          />
-          <img
-            src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-            class="w-50 p-3"
-          />
-        </div>
-        <p class="text-light small-font">Longer description of product.</p>
-        <div class="d-flex justify-content-between pt-4">
-          <div class="d-flex justify-content-start row">
-            <p class="text-light small-font">Deadline:</p>
-            <p class="text-light small-font">**/**/**</p>
-            <p class="text-light small-font">Current bid:</p>
-            <p class="text-light small-font">$****</p>
-            <p class="text-light small-font">Started on:</p>
-            <p class="text-light small-font">$****</p>
-          </div>
-        </div>
-        <form class="d-flex justify-content-end" action="/src/profile.html">
-          <div class="col-4">
-            <label
-              class="d-flex form-label justify-content-end text-light small-font"
-              >Insert bid here:</label
-            >
-            <input
-              type="text"
-              class="form-control bg-light small-font"
-              placeholder="$"
-            />
-            <div class="d-flex justify-content-end">
-              <button
-                type="submit"
-                class="btn bg-secondary medium-font fw-semibold mt-2"
-              >
-                Place bid
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
+      <div class="productCard"></div>
     </main>
   </body>
   <footer class="d-flex justify-content-between bg-primary p-3 mt-4 w-100">

@@ -1,16 +1,9 @@
 const apiUrl = "https://api.noroff.dev";
 const profileUrl = "/api/v1/auction/profiles/";
-const listingsUrl = "/api/v1/auction/listings";
+const listingsUrl = "/api/v1/auction/listings/";
 
 const displayProfileUrl = apiUrl + profileUrl;
 const allListingsUrl = apiUrl + listingsUrl;
-
-const sortBy = "created";
-const numListings = 10;
-let offset = 0;
-
-const loadMore = document.querySelector(".loadMore");
-loadMore.addEventListener("click", onClick);
 
 /**
  * Fetches the profile details
@@ -76,10 +69,7 @@ async function fetchSpecificListing(id) {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await fetch(
-      allListingsUrl + `${id}` + `?_author=true`,
-      getData
-    );
+    const response = await fetch(allListingsUrl + `${id}`, getData);
     const result = await response.json();
 
     return result;
@@ -157,28 +147,6 @@ function displayListing(listings) {
 }
 
 /**
- * Fetches and displays the listings
- * sorted by newest to latest created
- */
-async function fetchAndDisplay() {
-  const listings = await fetchListings(
-    `${allListingsUrl}?sort=${sortBy}&limit=${numListings}&offset=${offset}`
-  );
-  displayListings(listings);
-}
-
-/**
- * The page loads more listings
- * from the API when clicking the
- * "load more" button
- * @param {event} event The event that happens on click
- */
-function onClick(event) {
-  offset += numListings;
-  fetchAndDisplay(event);
-}
-
-/**
  * Loops through the listings from the API
  * @param {string} listings The listings that loops through
  */
@@ -197,6 +165,4 @@ export { allListingsUrl };
 export { fetchListings };
 export { fetchSpecificListing };
 export { displayListing };
-export { fetchAndDisplay };
 export { displayListings };
-export { onClick };
