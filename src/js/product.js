@@ -10,6 +10,11 @@ const token = localStorage.getItem("accessToken");
 
 const profileName = localStorage.getItem("name");
 
+const bid = document.querySelector(".bid");
+bid.addEventListener("click", onClick);
+
+const creditsInput = document.querySelector(".input");
+
 /**
  * Creates the HTML with the details
  * from the product
@@ -153,21 +158,14 @@ function createProductHTML(specificProduct) {
 const product = await fetchSpecificListing(id);
 createProductHTML(product);
 
-const bid = document.querySelector(".bid");
-console.log(bid);
-bid.addEventListener("click", onClick);
-
-const creditsInput = document.querySelector(".input");
-
 /**
  * Creates a new bid on
  * the specific listing that
  * will be posted to the API
- * @param {string} url The listing url
+ * @param {string} id The listing ID
  * @param {string} bid The bid
  */
 async function makeBid(id, bid) {
-  console.log({ bid, id });
   try {
     const token = localStorage.getItem("accessToken");
     const getData = {
@@ -181,12 +179,6 @@ async function makeBid(id, bid) {
       }),
     };
     const response = await fetch(allListingsUrl + `${id}` + bidUrl, getData);
-    console.log({
-      sum: allListingsUrl + `${id}` + bidUrl,
-      bidUrl,
-      id,
-      allListingsUrl,
-    });
     return response;
   } catch (error) {
     return error;
@@ -209,7 +201,6 @@ async function onClick(event) {
     const newCredits = localStorage.getItem("credits") - bid;
     localStorage.setItem("credits", newCredits);
     location.href = "/src/profile.html";
-    console.log("success");
   } else {
     const showError = document.querySelector("#showError");
     showError.classList.remove("invisible");
