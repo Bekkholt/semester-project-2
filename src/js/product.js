@@ -10,11 +10,6 @@ const token = localStorage.getItem("accessToken");
 
 const profileName = localStorage.getItem("name");
 
-const bid = document.querySelector(".bid");
-bid.addEventListener("click", onClick);
-
-const creditsInput = document.querySelector(".input");
-
 /**
  * Creates the HTML with the details
  * from the product
@@ -157,6 +152,11 @@ function createProductHTML(specificProduct) {
 
 const product = await fetchSpecificListing(id);
 createProductHTML(product);
+
+const bid = document.querySelector(".bid");
+bid.addEventListener("click", onClick);
+
+const creditsInput = document.querySelector(".input");
 
 /**
  * Creates a new bid on
