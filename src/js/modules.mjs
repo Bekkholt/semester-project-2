@@ -1,6 +1,7 @@
 const apiUrl = "https://api.noroff.dev";
 const profileUrl = "/api/v1/auction/profiles/";
 const listingsUrl = "/api/v1/auction/listings/";
+const bidUrl = "/bids";
 
 const displayProfileUrl = apiUrl + profileUrl;
 const allListingsUrl = apiUrl + listingsUrl;
@@ -169,3 +170,4 @@ export { fetchListings };
 export { fetchSpecificListing };
 export { displayListing };
 export { displayListings };
+export { bidUrl };

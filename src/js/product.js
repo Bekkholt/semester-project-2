@@ -1,4 +1,6 @@
 import { fetchSpecificListing } from "./modules.mjs";
+import { allListingsUrl } from "./modules.mjs";
+import { bidUrl } from "./modules.mjs";
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -66,14 +68,15 @@ function createProductHTML(specificProduct) {
     "text-light",
     "small-font"
   );
-  formInput.classList.add("form-control", "bg-light", "small-font");
+  formInput.classList.add("form-control", "bg-light", "small-font", "input");
   btnDiv.classList.add("d-flex", "justify-content-end");
   bidBtn.classList.add(
     "btn",
     "bg-secondary",
     "medium-font",
     "fw-semibold",
-    "mt-2"
+    "mt-2",
+    "bid"
   );
   editBtn.classList.add(
     "btn",
@@ -111,6 +114,7 @@ function createProductHTML(specificProduct) {
   startedOn.textContent = "Created:";
   startedDetails.textContent = specificProduct.created;
   formLabel.textContent = "Insert bid here:";
+  formInput.type = "number";
   formInput.placeholder = "Credits";
   editBtn.type = "button";
   editBtn.href = "../new_listing.html";
@@ -118,7 +122,6 @@ function createProductHTML(specificProduct) {
 
   if (localStorage.accessToken === token) {
     bidBtn.textContent = "Place bid";
-    bidBtn.href = "../profile.html";
     currentBid.classList.remove("invisible");
     currentDetails.classList.remove("invisible");
   } else {
@@ -149,3 +152,66 @@ function createProductHTML(specificProduct) {
 
 const product = await fetchSpecificListing(id);
 createProductHTML(product);
+
+const bid = document.querySelector(".bid");
+console.log(bid);
+bid.addEventListener("click", onClick);
+
+const creditsInput = document.querySelector(".input");
+
+/**
+ * Creates a new bid on
+ * the specific listing that
+ * will be posted to the API
+ * @param {string} url The listing url
+ * @param {string} bid The bid
+ */
+async function makeBid(id, bid) {
+  console.log({ bid, id });
+  try {
+    const token = localStorage.getItem("accessToken");
+    const getData = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        amount: bid,
+      }),
+    };
+    const response = await fetch(allListingsUrl + `${id}` + bidUrl, getData);
+    console.log({
+      sum: allListingsUrl + `${id}` + bidUrl,
+      bidUrl,
+      id,
+      allListingsUrl,
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+}
+
+/**
+ * The content goes through to the API
+ * when clicking "Place bid"
+ * and returns the user to the
+ * profile page if succeeded or gives
+ * an error message if it fails
+ * @param {Event} event The event that happens on click
+ */
+async function onClick(event) {
+  event.preventDefault();
+  const bid = Number.parseFloat(creditsInput.value);
+  const response = await makeBid(id, bid);
+  if (response.ok) {
+    const newCredits = localStorage.getItem("credits") - bid;
+    localStorage.setItem("credits", newCredits);
+    location.href = "/src/profile.html";
+    console.log("success");
+  } else {
+    const showError = document.querySelector("#showError");
+    showError.classList.remove("invisible");
+  }
+}
