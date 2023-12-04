@@ -93,7 +93,7 @@ function displayListing(listings) {
   const listingTitle = document.createElement("h5");
   const listingText = document.createElement("p");
   const goToProduct = document.createElement("a");
-  const listingOwner = document.createElement("p");
+  const listingEnding = document.createElement("p");
 
   const productUrl = "/src/product.html?id=";
   goToProduct.href = productUrl + `${listings.id}`;
@@ -125,7 +125,7 @@ function displayListing(listings) {
     "nav-link"
   );
 
-  listingOwner.classList.add(
+  listingEnding.classList.add(
     "d-flex",
     "justify-content-start",
     "text-light",
@@ -136,7 +136,7 @@ function displayListing(listings) {
   listingTitle.textContent = listings.title;
   listingText.textContent = listings.description;
   goToProduct.textContent = "See more";
-  listingOwner.textContent = "Ends at" + " " + listings.endsAt;
+  listingEnding.textContent = "Ends at" + " " + listings.endsAt;
 
   if (listings.media) {
     image.src = listings.media;
@@ -147,7 +147,7 @@ function displayListing(listings) {
   cardContent.append(listingTitle);
   cardContent.append(listingText);
   cardContent.append(goToProduct);
-  cardContent.append(listingOwner);
+  cardContent.append(listingEnding);
 }
 
 /**
