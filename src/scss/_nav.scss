@@ -1,3 +1,5 @@
-.active {
-  text-decoration: underline $secondary;
+.active,
+.btn:hover,
+.nav-link:hover {
+  text-decoration: underline $hover;
 }
