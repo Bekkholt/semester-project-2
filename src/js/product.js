@@ -103,10 +103,13 @@ function createProductHTML(specificProduct) {
   productText.textContent = specificProduct.description;
   deadline.textContent = "Deadline:";
   deadlineDetails.textContent = specificProduct.endsAt;
-  currentBid.textContent = "Latest bids:";
+  currentBid.textContent = "Latest bids (low to high):";
 
-  if (specificProduct._count.bids) {
-    currentDetails.textContent = `${specificProduct._count.bids}`;
+  if (specificProduct.bids.length > 0) {
+    for (let i = 0; i < specificProduct.bids.length; i++) {
+      const allbids = currentDetails.appendChild(document.createElement(`p`));
+      allbids.textContent = `${specificProduct.bids[i].amount}`;
+    }
   } else {
     currentDetails.textContent = "No bids";
   }

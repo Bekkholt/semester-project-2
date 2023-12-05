@@ -1,7 +1,7 @@
 const apiUrl = "https://api.noroff.dev";
 const profileUrl = "/api/v1/auction/profiles/";
 const listingsUrl = "/api/v1/auction/listings/";
-const bidUrl = "/bids";
+const bidUrl = "/bids?_seller=true&_bids=true";
 
 const displayProfileUrl = apiUrl + profileUrl;
 const allListingsUrl = apiUrl + listingsUrl;
@@ -71,7 +71,7 @@ async function fetchSpecificListing(id) {
       },
     };
     const response = await fetch(
-      allListingsUrl + `${id}` + `?_seller=true`,
+      allListingsUrl + `${id}` + `?_seller=true&_bids=true`,
       getData
     );
     const result = await response.json();
