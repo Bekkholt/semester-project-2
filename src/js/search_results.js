@@ -6,9 +6,23 @@ const params = new URLSearchParams(queryString);
 
 const search = params.get("search");
 
+let i = 0;
+let foundAll = false;
+const allListings = [];
+const limit = 100;
 const sortBy = "endsAt";
 
-const listings = await fetchListings(`${allListingsUrl}?sort=${sortBy}`);
+while (foundAll === false && i < 100) {
+  const offset = limit * i;
+  const listings = await fetchListings(
+    `${allListingsUrl}?sort=${sortBy}&limit=${limit}&offset=${offset}`
+  );
+  allListings.push(...listings);
+  if (listings.length < limit) {
+    foundAll = true;
+  }
+  i++;
+}
 
 /**
  * Runs through the input text in the
@@ -121,8 +135,7 @@ function showResults(results) {
  * the HTML made in showResults
  */
 async function allResults() {
-  console.log(listings);
-  const searchedListings = filterListings(listings, search);
+  const searchedListings = filterListings(allListings, search);
   showResults(searchedListings);
 }
 

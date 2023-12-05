@@ -17,6 +17,7 @@
     ></script>
     <script type="module" src="/src/js/profile.js"></script>
     <script type="module" src="/src/js/logout.js"></script>
+    <script type="module" src="/src/js/my_listings.js"></script>
     <title>Auctionhouse - My profile</title>
   </head>
   <body class="bg-light">
@@ -74,12 +75,12 @@
         </div>
         <div class="d-flex justify-content-center">
           <a
-            class="d-flex justify-content-start m-5 medium-font fw-semibold nav-link"
+            class="btn d-flex justify-content-start m-5 medium-font fw-semibold nav-link listings"
           >
             My listings
           </a>
           <a
-            class="d-flex justify-content-end m-5 medium-font fw-semibold nav-link"
+            class="btn d-flex justify-content-end m-5 medium-font fw-semibold nav-link"
           >
             My bids
           </a>
@@ -92,108 +93,13 @@
             Create new listing
           </a>
         </div>
-        <div class="p-4 mt-4 col-8 container bg-primary">
-          <div class="d-flex row">
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-          </div>
-          <a
-            class="d-flex justify-content-end text-light small-font nav-link"
-            href="/src/product.html"
-            >See more</a
-          >
-          <h4
-            class="d-flex justify-content-start text-light medium-font display-4"
-          >
-            Title
-          </h4>
-          <p class="d-flex justify-content-start text-light small-font">
-            Longer description of product.
-          </p>
-          <p
-            class="d-flex justify-content-start text-light medium-font fw-semibold fst-italic"
-          >
-            Listed by username.
-          </p>
-        </div>
-        <div class="p-4 mt-4 col-8 container bg-primary">
-          <div class="d-flex row">
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-          </div>
-          <a
-            class="d-flex justify-content-end text-light small-font nav-link"
-            href="/src/product.html"
-            >See more</a
-          >
-          <h4
-            class="d-flex justify-content-start text-light medium-font display-4"
-          >
-            Title
-          </h4>
-          <p class="d-flex justify-content-start text-light small-font">
-            Longer description of product.
-          </p>
-          <p
-            class="d-flex justify-content-start text-light medium-font fw-semibold fst-italic"
-          >
-            Listed by username.
-          </p>
-        </div>
-        <div class="p-4 mt-4 col-8 container bg-primary">
-          <div class="d-flex row">
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-            <img
-              src="/images/chris-lawton-zvKx6ixUhWQ-unsplash.jpg"
-              class="w-50 mb-2"
-            />
-          </div>
-          <a
-            class="d-flex justify-content-end text-light small-font nav-link"
-            href="/src/product.html"
-            >See more</a
-          >
-          <h4
-            class="d-flex justify-content-start text-light medium-font display-4"
-          >
-            Title
-          </h4>
-          <p class="d-flex justify-content-start text-light small-font">
-            Longer description of product.
-          </p>
-          <p
-            class="d-flex justify-content-start text-light medium-font fw-semibold fst-italic"
-          >
-            Listed by username.
-          </p>
-        </div>
+        <div class="listingCard"></div>
+        <div
+        class="alert alert-danger m-2 invisible"
+        role="alert"
+        id="showError"
+      >
+        <p id="errorMessage">Error! Listing not created.</p>
       </div>
     </main>
   </body>

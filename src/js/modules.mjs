@@ -163,6 +163,7 @@ function displayListings(listings) {
 }
 
 export { apiUrl };
+export { profileUrl };
 export { fetchProfileDetails };
 export { displayProfileUrl };
 export { allListingsUrl };
