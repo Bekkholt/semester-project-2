@@ -2,6 +2,11 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "nav";
 
+html,
+body {
+  height: 100%;
+}
+
 .background-img {
   background-image: url("/images/edgar-5lgPqfdLbMo-unsplash.jpg");
   background-position: center;

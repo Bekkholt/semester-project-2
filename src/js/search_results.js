@@ -24,6 +24,8 @@ while (foundAll === false && i < 100) {
   i++;
 }
 
+const spinner = document.querySelector(".spinner-border");
+
 /**
  * Runs through the input text in the
  * search input and check if any of the
@@ -121,6 +123,7 @@ function showResults(results) {
       }
 
       card.append(cardContent);
+      card.append(spinner);
       cardContent.appendChild(imageContainer);
       cardContent.append(listingTitle);
       cardContent.append(listingText);
@@ -140,3 +143,12 @@ async function allResults() {
 }
 
 allResults();
+
+/**
+ * Stops the spinner when all results are loaded
+ */
+function stopLoader() {
+  spinner.classList.add("invisible");
+}
+
+stopLoader();
