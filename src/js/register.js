@@ -57,7 +57,7 @@ async function submit() {
       const error = errors[i];
       errorText += error.message;
     }
-    errorMessage.textContent = errorText;
+    errorMessage.textContent = "Error!" + " " + errorText;
   }
 }
 

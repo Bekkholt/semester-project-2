@@ -30,6 +30,16 @@ async function onClick(event) {
   } else {
     const showError = document.querySelector("#showError");
     showError.classList.remove("invisible");
+    const errorMessage = document.querySelector("#errorMessage");
+    const json = await json();
+    const errors = json.errors;
+    let errorText = "";
+    for (let i = 0; i < errors.length; i++) {
+      if (i !== 0) errorText += ", ";
+      const error = errors[i];
+      errorText += error.message;
+    }
+    errorMessage.textContent = "Error!" + " " + errorText;
   }
 }
 
@@ -49,5 +59,15 @@ async function onClickBids(event) {
   } else {
     const showError = document.querySelector("#showError");
     showError.classList.remove("invisible");
+    const errorMessage = document.querySelector("#errorMessage");
+    const json = await json();
+    const errors = json.errors;
+    let errorText = "";
+    for (let i = 0; i < errors.length; i++) {
+      if (i !== 0) errorText += ", ";
+      const error = errors[i];
+      errorText += error.message;
+    }
+    errorMessage.textContent = "Error!" + " " + errorText;
   }
 }

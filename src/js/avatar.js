@@ -69,13 +69,14 @@ async function onClick(event) {
     const showError = document.querySelector("#showError");
     showError.classList.remove("invisible");
     const errorMessage = document.querySelector("#errorMessage");
-    const errors = response.errors;
+    const json = await response.json();
+    const errors = json.errors;
     let errorText = "";
     for (let i = 0; i < errors.length; i++) {
       if (i !== 0) errorText += ", ";
       const error = errors[i];
       errorText += error.message;
     }
-    errorMessage.textContent = errorText;
+    errorMessage.textContent = "Error!" + " " + errorText;
   }
 }
