@@ -28,3 +28,7 @@ body {
 .small-font {
   font-family: "Andada Pro", serif;
 }
+
+.delete:hover {
+  text-decoration: underline $primary;
+}

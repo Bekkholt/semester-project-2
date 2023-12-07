@@ -37,7 +37,7 @@ function createProductHTML(specificProduct) {
   const formInput = document.createElement("input");
   const btnDiv = document.createElement("div");
   const bidBtn = document.createElement("button");
-  const editBtn = document.createElement("button");
+  const editBtn = document.createElement("a");
 
   const cardContent = card.appendChild(document.createElement(`div`));
   const image = imageContainer.appendChild(document.createElement(`img`));
@@ -69,7 +69,7 @@ function createProductHTML(specificProduct) {
     "small-font"
   );
   formInput.classList.add("form-control", "bg-light", "small-font", "input");
-  btnDiv.classList.add("d-flex", "justify-content-end");
+  btnDiv.classList.add("d-flex", "justify-content-end", "p-0");
   bidBtn.classList.add(
     "btn",
     "bg-secondary",
@@ -120,7 +120,7 @@ function createProductHTML(specificProduct) {
   formInput.type = "number";
   formInput.placeholder = "Credits";
   editBtn.type = "button";
-  editBtn.href = "../new_listing.html";
+  editBtn.href = "/src/update_listing.html" + "?id=" + `${specificProduct.id}`;
   bidBtn.type = "submit";
 
   if (localStorage.accessToken === token) {
