@@ -18,7 +18,6 @@ const inputImage = document.querySelector("#input");
  * updated on the profile
  * @param {string} currentDetails The profile details
  */
-
 function profileDetails() {
   avatarContainer.src = currentDetails.avatar;
 }
@@ -29,7 +28,6 @@ profileDetails();
  * Updates the avatar
  * in the API
  * @param {string} avatar The avatar
-
  */
 async function newAvatar(url, avatar) {
   try {
@@ -44,12 +42,9 @@ async function newAvatar(url, avatar) {
         avatar: avatar,
       }),
     };
-    console.log(getData);
     const response = await fetch(url, getData);
-    console.log(response);
     return response;
   } catch (error) {
-    console.error(error);
     return error;
   }
 }
@@ -66,7 +61,6 @@ async function onClick(event) {
   event.preventDefault();
   const url = displayProfileUrl + name + "/media";
   const avatar = inputImage.value;
-  console.log(url, avatar);
   const response = await newAvatar(url, avatar);
   if (response.ok) {
     localStorage.setItem("avatar", avatar);
@@ -74,5 +68,14 @@ async function onClick(event) {
   } else {
     const showError = document.querySelector("#showError");
     showError.classList.remove("invisible");
+    const errorMessage = document.querySelector("#errorMessage");
+    const errors = response.errors;
+    let errorText = "";
+    for (let i = 0; i < errors.length; i++) {
+      if (i !== 0) errorText += ", ";
+      const error = errors[i];
+      errorText += error.message;
+    }
+    errorMessage.textContent = errorText;
   }
 }

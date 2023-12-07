@@ -43,8 +43,7 @@ async function onClick(event) {
  */
 async function onClickBids(event) {
   event.preventDefault();
-  const bids = await displayMyBids(myBidsUrl);
-  console.log({ bids });
+  const bids = await fetchListings(myBidsUrl);
   if (bids.length !== undefined) {
     displayMyBids(bids);
   } else {

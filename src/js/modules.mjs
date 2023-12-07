@@ -83,7 +83,7 @@ async function fetchSpecificListing(id) {
 }
 
 /**
- * Displays the listings from the API in the "see all" feed
+ * Displays the listings from the API in the feed
  * @param {string} listings The listings to display
  */
 function displayListing(listings) {
@@ -151,14 +151,115 @@ function displayListing(listings) {
 }
 
 /**
+ * Displays the bids from teh API in the feed
+ * @param {string} bid The bids to display
+ */
+function displayMyBid(bid) {
+  const card = document.querySelector(".listingCard");
+
+  const imageContainer = document.createElement("div");
+  const listingTitle = document.createElement("h5");
+  const listingText = document.createElement("p");
+  const goToProduct = document.createElement("a");
+  const myBid = document.createElement("p");
+  const listingEnding = document.createElement("p");
+
+  const productUrl = "/src/product.html?id=";
+  goToProduct.href = productUrl + `${bid.listing.id}`;
+
+  const cardContent = card.appendChild(document.createElement(`div`));
+  const image = imageContainer.appendChild(document.createElement(`img`));
+
+  cardContent.classList.add("p-4", "mt-4", "col-8", "container", "bg-primary");
+  imageContainer.classList.add("d-flex", "row", "justify-content-center");
+  image.classList.add("w-50", "mb-2");
+  listingTitle.classList.add(
+    "d-flex",
+    "justify-content-start",
+    "text-light",
+    "medium-font",
+    "display-4"
+  );
+  listingText.classList.add(
+    "d-flex",
+    "justify-content-start",
+    "text-light",
+    "small-font"
+  );
+  goToProduct.classList.add(
+    "d-flex",
+    "justify-content-end",
+    "text-light",
+    "small-font",
+    "nav-link"
+  );
+
+  listingEnding.classList.add(
+    "d-flex",
+    "justify-content-start",
+    "text-light",
+    "small-font",
+    "fst-italic"
+  );
+  myBid.classList.add(
+    "d-flex",
+    "justify-content-start",
+    "text-light",
+    "small-font",
+    "fst-italic"
+  );
+
+  listingTitle.textContent = bid.listing.title;
+  listingText.textContent = bid.listing.description;
+  goToProduct.textContent = "See more";
+  listingEnding.textContent = "Ends at" + " " + bid.listing.endsAt;
+  myBid.textContent = "My bid:" + " " + bid.amount;
+
+  if (bid.listing.media) {
+    image.src = bid.listing.media;
+  }
+
+  card.append(cardContent);
+  cardContent.appendChild(imageContainer);
+  cardContent.append(listingTitle);
+  cardContent.append(listingText);
+  cardContent.append(myBid);
+  cardContent.append(goToProduct);
+  cardContent.append(listingEnding);
+}
+
+/**
+ * Clears the div with the cards
+ */
+function clearCards() {
+  const card = document.querySelector(".listingCard");
+  while (card.firstChild) {
+    card.removeChild(card.firstChild);
+  }
+}
+
+/**
  * Loops through the listings from the API
  * @param {string} listings The listings that loops through
  */
 function displayListings(listings) {
+  clearCards();
   let listingNumber = listings.length;
   for (let i = 0; i < listingNumber; i++) {
     const listing = listings[i];
     displayListing(listing);
+  }
+}
+/**
+ * Loops through the bids from the API
+ * @param {string} bids The bids that loops through
+ */
+function displayMyBids(bids) {
+  clearCards();
+  let bidNumber = bids.length;
+  for (let i = 0; i < bidNumber; i++) {
+    const bid = bids[i];
+    displayMyBid(bid);
   }
 }
 
@@ -172,3 +273,4 @@ export { fetchSpecificListing };
 export { displayListing };
 export { displayListings };
 export { bidUrl };
+export { displayMyBids };
