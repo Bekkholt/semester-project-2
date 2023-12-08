@@ -128,8 +128,9 @@ function createProductHTML(specificProduct) {
     currentBid.classList.remove("invisible");
     currentDetails.classList.remove("invisible");
   } else {
-    bidBtn.textContent = "Login to place bid";
-    bidBtn.href = "./";
+    formLabel.textContent = "Login to bid on this item.";
+    formInput.classList.add("invisible");
+    bidBtn.classList.add("invisible");
   }
 
   editBtn.textContent = "Edit listing";
