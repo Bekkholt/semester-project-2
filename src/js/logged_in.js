@@ -47,6 +47,7 @@ function loggedIn() {
     "small-font"
   );
 
+  logoImg.alt = "Auctionhouse logo";
   logout.id = "logout";
 
   logoLink.href = "/src/all_listings.html";
