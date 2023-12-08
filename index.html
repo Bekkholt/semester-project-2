@@ -16,35 +16,12 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="/src/js/login.js"></script>
+    <script type="module" src="/src/js/logged_in.js"></script>
+    <script type="module" src="/src/js/logout.js"></script>
     <title>Auctionhouse - Home</title>
   </head>
   <body class="background-img">
-    <header class="sticky-top">
-      <nav class="bg-primary w-100">
-        <ul class="container d-flex justify-content-between">
-          <div class="d-flex justify-content-start">
-            <a href="/">
-              <img src="/images/Logoauctionhouse_logo.png" class="mt-3 h-50" />
-            </a>
-            <a
-              class="text-secondary nav-link btn mt-4 m-4 small-font"
-              href="/src/all_listings.html"
-              >See all listings</a
-            >
-          </div>
-          <div class="d-flex justify-content-end">
-            <a
-              class="text-secondary nav-link btn mt-4 m-4 small-font"
-              href="/src/register.html"
-              >Register</a
-            >
-            <a class="text-secondary nav-link btn mt-4 small-font active"
-              >Login</a
-            >
-          </div>
-        </ul>
-      </nav>
-    </header>
+    <header class="header"></header>
     <main>
       <h1
         class="d-flex justify-content-center m-5 big-font display-1 text-center"
@@ -56,7 +33,7 @@
         action="/src/profile.html"
         id="form"
       >
-        <div class="bg-primary p-4">
+        <div class="bg-primary p-4 login-form">
           <input
             type="email"
             class="form-control bg-light mt-3 small-font"
