@@ -44,11 +44,11 @@ function loggedIn() {
     "nav-link",
     "btn",
     "mt-4",
-    "small-font"
+    "small-font",
+    "logout"
   );
 
   logoImg.alt = "Auctionhouse logo";
-  logout.id = "logout";
 
   logoLink.href = "/src/all_listings.html";
   logoImg.src = "/images/Logoauctionhouse_logo.png";

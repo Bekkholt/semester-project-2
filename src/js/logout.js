@@ -1,4 +1,4 @@
-const logoutButton = document.querySelector("#logout");
+const logoutButton = document.querySelector(".logout");
 
 logoutButton.addEventListener("click", onClick);
 
