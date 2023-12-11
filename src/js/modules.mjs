@@ -109,20 +109,24 @@ function displayListing(listings) {
     "justify-content-start",
     "text-light",
     "medium-font",
-    "display-4"
+    "display-4",
+    "p-2"
   );
   listingText.classList.add(
     "d-flex",
     "justify-content-start",
     "text-light",
-    "small-font"
+    "small-font",
+    "p-2"
   );
   goToProduct.classList.add(
     "d-flex",
-    "justify-content-end",
-    "text-light",
+    "justify-content-center",
+    "text-primary",
     "small-font",
-    "nav-link"
+    "btn",
+    "bg-secondary",
+    "col-3"
   );
 
   listingEnding.classList.add(
@@ -130,7 +134,8 @@ function displayListing(listings) {
     "justify-content-start",
     "text-light",
     "small-font",
-    "fst-italic"
+    "fst-italic",
+    "p-2"
   );
 
   const date = new Date(listings.endsAt);
@@ -190,20 +195,24 @@ function displayMyBid(bid) {
     "justify-content-start",
     "text-light",
     "medium-font",
-    "display-4"
+    "display-4",
+    "p-2"
   );
   listingText.classList.add(
     "d-flex",
     "justify-content-start",
     "text-light",
-    "small-font"
+    "small-font",
+    "p-2"
   );
   goToProduct.classList.add(
     "d-flex",
-    "justify-content-end",
-    "text-light",
+    "justify-content-center",
+    "text-primary",
     "small-font",
-    "nav-link"
+    "btn",
+    "bg-secondary",
+    "col-3"
   );
 
   listingEnding.classList.add(
@@ -211,14 +220,16 @@ function displayMyBid(bid) {
     "justify-content-start",
     "text-light",
     "small-font",
-    "fst-italic"
+    "fst-italic",
+    "p-2"
   );
   myBid.classList.add(
     "d-flex",
     "justify-content-start",
     "text-light",
     "small-font",
-    "fst-italic"
+    "fst-italic",
+    "p-2"
   );
 
   const bidEnding = new Date(bid.listing.endsAt);
