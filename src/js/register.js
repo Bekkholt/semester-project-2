@@ -43,12 +43,17 @@ async function submit() {
   };
   const json = await register(`${apiUrl}/api/v1/auction/auth/register`, user);
 
+  const showSuccess = document.querySelector("#showSuccess");
+  const showError = document.querySelector("#showError");
+
   if (json.statusCode === undefined) {
-    const showSuccess = document.querySelector("#showSuccess");
+    const successMessage = document.querySelector("#successMessage");
+    successMessage.textContent = "You profile was registered!";
     showSuccess.classList.remove("invisible");
+    showError.classList.add("invisible");
   } else if (json.statusCode === 400) {
-    const showError = document.querySelector("#showError");
     showError.classList.remove("invisible");
+    showSuccess.classList.add("invisible");
     const errorMessage = document.querySelector("#errorMessage");
     const errors = json.errors;
     let errorText = "";
