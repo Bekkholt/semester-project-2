@@ -100,9 +100,21 @@ function createProductHTML(specificProduct) {
     productText.classList.add("mt-4");
   }
 
+  const deadlineDate = new Date(specificProduct.endsAt);
+  const formatedDeadlineDate =
+    deadlineDate.getDate() +
+    "/" +
+    (deadlineDate.getMonth() + 1) +
+    "/" +
+    deadlineDate.getFullYear() +
+    " - " +
+    deadlineDate.getHours() +
+    ":" +
+    deadlineDate.getMinutes();
+
   productText.textContent = specificProduct.description;
   deadline.textContent = "Deadline:";
-  deadlineDetails.textContent = specificProduct.endsAt;
+  deadlineDetails.textContent = formatedDeadlineDate;
   currentBid.textContent = "Latest bids (low to high):";
 
   if (specificProduct.bids.length > 0) {
@@ -114,8 +126,20 @@ function createProductHTML(specificProduct) {
     currentDetails.textContent = "No bids";
   }
 
+  const createdDate = new Date(specificProduct.created);
+  const formatedCreatedDate =
+    createdDate.getDate() +
+    "/" +
+    (createdDate.getMonth() + 1) +
+    "/" +
+    createdDate.getFullYear() +
+    " - " +
+    createdDate.getHours() +
+    ":" +
+    createdDate.getMinutes();
+
   startedOn.textContent = "Created:";
-  startedDetails.textContent = specificProduct.created;
+  startedDetails.textContent = formatedCreatedDate;
   formLabel.textContent = "Insert bid here:";
   formInput.type = "number";
   formInput.placeholder = "Credits";
