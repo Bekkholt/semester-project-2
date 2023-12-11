@@ -221,10 +221,22 @@ function displayMyBid(bid) {
     "fst-italic"
   );
 
+  const bidEnding = new Date(bid.listing.endsAt);
+  const formatedDate =
+    bidEnding.getDate() +
+    "/" +
+    (bidEnding.getMonth() + 1) +
+    "/" +
+    bidEnding.getFullYear() +
+    " - " +
+    bidEnding.getHours() +
+    ":" +
+    bidEnding.getMinutes();
+
   listingTitle.textContent = bid.listing.title;
   listingText.textContent = bid.listing.description;
   goToProduct.textContent = "See more";
-  listingEnding.textContent = "Ends at" + " " + bid.listing.endsAt;
+  listingEnding.textContent = "Ends at" + " " + formatedDate;
   myBid.textContent = "My bid:" + " " + bid.amount;
 
   if (bid.listing.media) {
