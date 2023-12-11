@@ -17,7 +17,7 @@ async function fetchAndDisplay() {
   const listings = await fetchListings(
     `${allListingsUrl}?sort=${sortBy}&limit=${numListings}&offset=${offset}`
   );
-  displayListings(listings);
+  displayListings(listings, false);
 }
 
 /**

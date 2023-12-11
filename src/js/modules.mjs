@@ -266,8 +266,8 @@ function clearCards() {
  * Loops through the listings from the API
  * @param {string} listings The listings that loops through
  */
-function displayListings(listings) {
-  clearCards();
+function displayListings(listings, clear) {
+  if (clear) clearCards();
   let listingNumber = listings.length;
   for (let i = 0; i < listingNumber; i++) {
     const listing = listings[i];

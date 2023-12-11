@@ -26,7 +26,7 @@ async function onClick(event) {
   event.preventDefault();
   const listings = await fetchListings(myListingsuRL);
   if (listings.length !== undefined) {
-    displayListings(listings);
+    displayListings(listings, true);
   } else {
     const showError = document.querySelector("#showError");
     showError.classList.remove("invisible");
