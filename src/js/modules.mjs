@@ -133,10 +133,22 @@ function displayListing(listings) {
     "fst-italic"
   );
 
+  const date = new Date(listings.endsAt);
+  const formatedDate =
+    date.getDate() +
+    "/" +
+    (date.getMonth() + 1) +
+    "/" +
+    date.getFullYear() +
+    " - " +
+    date.getHours() +
+    ":" +
+    date.getMinutes();
+
   listingTitle.textContent = listings.title;
   listingText.textContent = listings.description;
   goToProduct.textContent = "See more";
-  listingEnding.textContent = "Ends at" + " " + listings.endsAt;
+  listingEnding.textContent = "Ends at" + " " + formatedDate;
 
   if (listings.media) {
     image.src = listings.media;
