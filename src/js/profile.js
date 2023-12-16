@@ -1,10 +1,7 @@
-import { profileDetails } from "./avatar";
+import { profileDetails } from "./modules.mjs";
 
 const username = localStorage.getItem("name");
-const avatar = localStorage.getItem("avatar");
 const credits = localStorage.getItem("credits");
-
-profileDetails();
 
 /**
  * Shows the username
@@ -18,17 +15,7 @@ function displayUsername() {
 
 displayUsername();
 
-/**
- * Shows the avatar
- * for the profile logged in
- */
-function displayAvatar() {
-  const displayAvatar = document.querySelector("#avatar");
-
-  displayAvatar.src = avatar;
-}
-
-displayAvatar();
+profileDetails();
 
 /**
  * Shows the credits

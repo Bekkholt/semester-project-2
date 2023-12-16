@@ -1,30 +1,11 @@
-import { fetchProfileDetails } from "../js/modules.mjs";
 import { displayProfileUrl } from "../js/modules.mjs";
 
 const name = localStorage.getItem("name");
 
-const currentDetails = await fetchProfileDetails(name);
-
 const update = document.querySelector("#update");
 update.addEventListener("click", onClick);
 
-const avatarContainer = document.querySelector("#avatarContainer");
-
 const inputImage = document.querySelector("#input");
-
-/**
- * Inserts the avatar details
- * in the form so it can be
- * updated on the profile
- * @param {string} currentDetails The profile details
- */
-function profileDetails() {
-  if (currentDetails.avatar != 0 && currentDetails.avatar != undefined) {
-    avatarContainer.src = currentDetails.avatar;
-  }
-}
-
-profileDetails();
 
 /**
  * Updates the avatar
@@ -82,5 +63,3 @@ async function onClick(event) {
     errorMessage.textContent = "Error!" + " " + errorText;
   }
 }
-
-export { profileDetails };
