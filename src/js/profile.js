@@ -1,4 +1,4 @@
-import { profileDetails } from "./modules.mjs";
+import { fetchProfileDetails } from "./modules.mjs";
 
 const username = localStorage.getItem("name");
 const credits = localStorage.getItem("credits");
@@ -14,6 +14,21 @@ function displayUsername() {
 }
 
 displayUsername();
+
+const currentDetails = await fetchProfileDetails(username);
+const avatarContainer = document.querySelector("#avatarContainer");
+
+/**
+ * Inserts the avatar details
+ * in the form so it can be
+ * updated on the profile
+ * @param {string} currentDetails The profile details
+ */
+function profileDetails() {
+  if (currentDetails.avatar != null && currentDetails.avatar != undefined) {
+    avatarContainer.src = currentDetails.avatar;
+  }
+}
 
 profileDetails();
 

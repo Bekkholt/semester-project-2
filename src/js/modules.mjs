@@ -298,23 +298,6 @@ function displayMyBids(bids) {
   }
 }
 
-const currentDetails = await fetchProfileDetails(name);
-const avatarContainer = document.querySelector("#avatarContainer");
-
-/**
- * Inserts the avatar details
- * in the form so it can be
- * updated on the profile
- * @param {string} currentDetails The profile details
- */
-function profileDetails() {
-  if (currentDetails.avatar != 0 && currentDetails.avatar != undefined) {
-    avatarContainer.src = currentDetails.avatar;
-  }
-}
-
-profileDetails();
-
 export { apiUrl };
 export { profileUrl };
 export { fetchProfileDetails };
@@ -326,4 +309,3 @@ export { displayListing };
 export { displayListings };
 export { bidUrl };
 export { displayMyBids };
-export { profileDetails };
