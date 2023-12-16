@@ -19,7 +19,9 @@ const inputImage = document.querySelector("#input");
  * @param {string} currentDetails The profile details
  */
 function profileDetails() {
-  avatarContainer.src = currentDetails.avatar;
+  if (currentDetails.avatar != 0 && currentDetails.avatar != undefined) {
+    avatarContainer.src = currentDetails.avatar;
+  }
 }
 
 profileDetails();
