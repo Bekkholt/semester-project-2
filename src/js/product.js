@@ -59,7 +59,7 @@ function createProductHTML(specificProduct) {
   currentDetails.classList.add("text-light", "small-font", "invisible");
   startedOn.classList.add("text-light", "small-font");
   startedDetails.classList.add("text-light", "small-font");
-  insertForm.classList.add("d-flex", "justify-content-end", "row");
+  insertForm.classList.add("d-flex", "justify-content-end", "flex-column");
   formDiv.classList.add("col-4");
   formLabel.classList.add(
     "d-flex",
