@@ -28,6 +28,7 @@ function profileDetails() {
   if (
     currentDetails.avatar !== null &&
     currentDetails.avatar !== undefined &&
+    currentDetails.avatar !== "null" &&
     currentDetails.avatar !== ""
   ) {
     avatarContainer.src = currentDetails.avatar;
