@@ -25,7 +25,11 @@ const avatarContainer = document.querySelector("#avatarContainer");
  * @param {string} currentDetails The profile details
  */
 function profileDetails() {
-  if (currentDetails.avatar != null && currentDetails.avatar != undefined) {
+  if (
+    currentDetails.avatar !== null &&
+    currentDetails.avatar !== undefined &&
+    currentDetails.avatar !== ""
+  ) {
     avatarContainer.src = currentDetails.avatar;
   }
 }

@@ -3,7 +3,7 @@ import { displayProfileUrl } from "../js/modules.mjs";
 const avatarContainer = document.querySelector("#avatarContainer");
 const getAvatar = localStorage.getItem("avatar");
 
-if (getAvatar != undefined && getAvatar != null) {
+if (getAvatar !== undefined && getAvatar !== null && getAvatar !== "") {
   avatarContainer.src = getAvatar;
 }
 
