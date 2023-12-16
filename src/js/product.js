@@ -118,6 +118,9 @@ function createProductHTML(specificProduct) {
   currentBid.textContent = "Latest bids (low to high):";
 
   if (specificProduct.bids.length > 0) {
+    specificProduct.bids.sort((a, b) => {
+      return a.amount - b.amount;
+    });
     for (let i = 0; i < specificProduct.bids.length; i++) {
       const allbids = currentDetails.appendChild(document.createElement(`p`));
       allbids.textContent = `${specificProduct.bids[i].amount}`;
