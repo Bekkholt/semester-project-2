@@ -1,6 +1,10 @@
+import { profileDetails } from "./avatar";
+
 const username = localStorage.getItem("name");
 const avatar = localStorage.getItem("avatar");
 const credits = localStorage.getItem("credits");
+
+profileDetails();
 
 /**
  * Shows the username

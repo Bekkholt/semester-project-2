@@ -82,3 +82,5 @@ async function onClick(event) {
     errorMessage.textContent = "Error!" + " " + errorText;
   }
 }
+
+export { profileDetails };
