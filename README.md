@@ -1,6 +1,6 @@
 # Semester project 2 - Auctionhouse
 
-![image](/images/auctionhouse_screenshot.png)
+![image](/images/portfolioauctionhouse.jpg)
 
 I have made a website for an autcion site called Auctionhouse.
 
